@@ -10,7 +10,8 @@
     }
   ],
   "browser_action": {
-    "default_title": "HI JARED"
+    "default_title": "HI JARED",
+    "default_icon": "/docs/assets/images/jared.png"
   },
   "web_accessible_resources": [
     "/docs/assets/images/aiden.png",
