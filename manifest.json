@@ -13,6 +13,25 @@
     "default_title": "HI JARED"
   },
   "web_accessible_resources": [
-    "./docs/assets/images/jared_bio_book.png"
+    "/docs/assets/images/aiden.png",
+    "/docs/assets/images/annie.png",
+    "/docs/assets/images/cody.png",
+    "/docs/assets/images/corey.png",
+    "/docs/assets/images/demi.png",
+    "/docs/assets/images/jared.png",
+    "/docs/assets/images/kat.png",
+    "/docs/assets/images/kristin.png",
+    "/docs/assets/images/laura.png",
+    "/docs/assets/images/louie.png",
+    "/docs/assets/images/mia.png",
+    "/docs/assets/images/mike.png",
+    "/docs/assets/images/peaches.png",
+    "/docs/assets/images/phillip.png",
+    "/docs/assets/images/samantha.png",
+    "/docs/assets/images/shanda.png",
+    "/docs/assets/images/simon.png",
+    "/docs/assets/images/sophia.png",
+    "/docs/assets/images/xochilt.png",
+    "/docs/assets/images/zachary.png"
 ]
 }
