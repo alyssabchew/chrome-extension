@@ -4,9 +4,9 @@
 const FTRIimages = ["aiden", "annie", "cody", "corey", "demi", "jared", "kat", "kristin", "laura", "louie", "mia", "mike", "peaches", "phillip", "samantha", "shanda", "simon", "sophia", "xochilt", "zachary"]; 
 
 // use query selector to get all images off the DOM
-const browserImages = document.querySelectorAll("a, img, div, picture, figure, .img._aagt");
+const browserImages = document.querySelectorAll("a, img, div, picture, figure, .img._aagt, .img.css-9pa8cd");
 // var divImages = document.getElementsByClassName("_ab8w _ab94 _ab99 _ab9f _ab9m _ab9p _abc0 _abcm");
-const divImgs = document.getElementsByClassName("_aagt");
+const divImgs = document.getElementsByClassName("_aagt css-9pa8cd");
 // set images to all be random images from FTRIimages
 // start with setting all images to jared
 
