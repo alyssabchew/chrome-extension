@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var submitButton = document.getElementById('button_submit');
+  let submitButton = document.getElementById('button_submit');
   submitButton.addEventListener('click', sendData);
   });
 function sendData() {
@@ -9,13 +9,14 @@ function sendData() {
   }
   chrome.tabs.query(params, gotTabs);
   function gotTabs(tabs) {
-    let profile = document.getElementById("profileText");
-    let username = document.getElementById("username");
+    let profile = document.getElementById("profileText").value;
+    let username = document.getElementById("username").value;
     let message = {
       txt: "Hello",
-      username,
-      profile
+      username: username,
+      profile: profile
     }
+    console.log(message);
     chrome.tabs.sendMessage(tabs[0].id, message, function (response) {
       console.log("Success");
     });
