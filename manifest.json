@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "FTRI 10 Image Replacer",
+  "name": "FTRI 10 Staff Replacer",
   "version": "1.0",
   "description": "Chrome Extension for replacing images in your current tab with the lovely faces of FTRI 10",
   "background" : {

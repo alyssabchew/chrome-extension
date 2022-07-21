@@ -78,6 +78,8 @@ window.addEventListener("load", () => {
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
  if (message.txt === "Hello") {
   console.log(message)
+  console.log(profile);
+  console.log(username);
   profile[0].innerText = message.profile;
   username[0].innerText = message.username;
 }});
