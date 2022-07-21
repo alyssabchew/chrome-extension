@@ -7,13 +7,15 @@ const FTRIimages = ["aiden", "annie", "cody", "corey", "demi", "jared", "kat", "
 const browserImages = document.querySelectorAll("a, img, div, picture, figure, .img._aagt");
 // twitter? , .img.css-9pa8cd
 // var divImages = document.getElementsByClassName("_ab8w _ab94 _ab99 _ab9f _ab9m _ab9p _abc0 _abcm");
-const divImgs = document.getElementsByClassName("_aagt"); // twitter? css-9pa8cd
+const divImgs = document.getElementsByClassName("_aagt"); 
+// twitter? css-9pa8cd
+const twitterImgs = document.getElementsByClassName("css-9pa8cd");
 
 const storyImgs = document.getElementsByClassName("_ab0b");
 
 const profile = document.getElementsByClassName("_aacl _aacs _aact _aacx _aada");
 console.log(profile);
-const name = document.getElementsByClassName("_aacl _aaco _aacw _aacx _aad7 _aade");
+const username = document.getElementsByClassName("_aacl _aaco _aacw _aacx _aad7 _aade");
 
 // set images to all be random images from FTRIimages
 // start with setting all images to jared
@@ -58,12 +60,17 @@ window.addEventListener("load", () => {
   console.log(divImgs.length);
   replaceImages(divImgs);
   replaceImages(storyImgs);
-  profile[0].innerText = 'Jared';
-  name[0].innerText = "jared lewis";
+  replaceImages(twitterImgs);
+  
 }, 8000)
 }
 )
 
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+ if(message.txt === "hello") {
+  profile[0].innerText = message.profile;
+  username[0].innerText = message.username;
+}});
 
 // window.addEventListener("load", function(event) {
 //   replaceImages(browserImages);
