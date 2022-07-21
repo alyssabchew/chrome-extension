@@ -16,20 +16,24 @@ const storyImgs = document.getElementsByClassName("_ab0b");
 
 const profileImage = document.getElementsByClassName("_aadp");
 
-const profile = document.getElementsByClassName("_aacl _aacs _aact _aacx _aada");
-console.log(profile);
-const username = document.getElementsByClassName("_aacl _aaco _aacw _aacx _aad7 _aade");
+const username = document.getElementsByClassName("_aacl _aacs _aact _aacx _aada");
+const profile = document.getElementsByClassName("_aacl _aaco _aacw _aacx _aad7 _aade");
 
 // set images to all be random images from FTRIimages
 // start with setting all images to jared
+let jaredCount = 0; 
 
 function replaceImages (images) {
+  let jareds = 0;
 // replace browserImages src's with FTRIimages
   for (let i = 0; i < images.length; i++) {
     const index = Math.floor(Math.random() * FTRIimages.length);
     const newImage = chrome.runtime.getURL(
       "/docs/assets/images/" + FTRIimages[index] + ".png"
     );
+    if (FTRIimages[index] === "jared") {
+      jareds++;
+    }
     images[i].src = newImage;
     images[i].alt = FTRIimages[index];
     if (images[i].getAttribute('srcset')) {
@@ -51,9 +55,10 @@ function replaceImages (images) {
     //   "/docs/assets/images/" + FTRIimages[Math.floor(Math.random() * FTRIimages.length)] + ".png"
     // );
   }
+  return jareds;
 }
 
-replaceImages(browserImages);
+jaredCount += replaceImages(browserImages);
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -61,17 +66,17 @@ window.addEventListener("load", () => {
   // replaceImages(divImages);
   console.log(divImgs);
   console.log(divImgs.length);
-  replaceImages(divImgs);
-  replaceImages(storyImgs);
-  replaceImages(profileImage);
-  replaceImages(twitterImgs);
-  
+  jaredCount += replaceImages(divImgs);
+  jaredCount += replaceImages(storyImgs);
+  jaredCount += replaceImages(profileImage);
+  jaredCount += replaceImages(twitterImgs);
+  console.log("JAREDS: ", jaredCount);
 }, 8000)
 }
 )
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
- if(message.txt === "Hello") {
+ if (message.txt === "Hello") {
   console.log(message)
   profile[0].innerText = message.profile;
   username[0].innerText = message.username;

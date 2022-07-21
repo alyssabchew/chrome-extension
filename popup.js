@@ -9,7 +9,7 @@ function sendData() {
   }
   chrome.tabs.query(params, gotTabs);
   function gotTabs(tabs) {
-    let profile = document.getElementById("profileText").value;
+    let profile = document.getElementById("profile").value;
     let username = document.getElementById("username").value;
     let message = {
       txt: "Hello",
@@ -22,3 +22,16 @@ function sendData() {
     });
   }
 }
+
+// document.getElementsById("jared_submit").onclick = function gotTabs(tabs) 
+  // {
+  //   let guess = document.getElementById("jaredsGuess").value;
+  //   let message = {
+  //     txt: "jareds",
+  //     guess: guess,
+  //   }
+  //   console.log(message);
+  //   chrome.tabs.sendMessage(tabs[0].id, message, function (response) {
+  //     console.log("Success");
+  //   });
+  // }
